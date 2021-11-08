@@ -23,7 +23,7 @@ class HTMLCollection:
     def __init__(self, soup, Subclass, tag, class_, key: FunctionType=None):
         """Creats a container of HTMLElements for which key(HTMLelement) is true (or key=None by default)"""
         assert isinstance(soup, bs4.element.Tag), f'soup {soup} must be of type soup!'
-        assert issubclass(Subclass, HTMLElement), f'class {subclass} is not a subclass of HTMLElement'
+        assert issubclass(Subclass, HTMLElement), f'class {Subclass} is not a subclass of HTMLElement'
         self.collection = list(filter(key, [Subclass(el) for el in soup.find_all(tag, class_=class_)]))
     
     def get_elements(self):
