@@ -28,7 +28,7 @@ if __name__ == '__main__':
             try:
                 user_input = input('Enter a command: ').strip()
                 commands[user_input]()
-            except KeyboardInterrupt as e:
+            except (KeyboardInterrupt, EOFError) as e:
                 repl_quit() 
             except KeyError as e:
                 print(f'"{user_input}" is an incorrect command.')
