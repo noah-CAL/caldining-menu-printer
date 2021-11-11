@@ -4,8 +4,6 @@ import os
 import sys
 
 if __name__ == '__main__':
-    menu = create_menu(URL)
-
     start_msg = """Welcome to the Menu REPL!"""
     help_msg = """Commands:
     help                -- prints the command menu
@@ -17,6 +15,9 @@ if __name__ == '__main__':
          croads
          foothill"""
 
+    menu = create_menu(URL)
+
+    ## Main REPL Functionality ##
     def repl():
         commands = {
             'help': print_commands,
@@ -41,7 +42,8 @@ if __name__ == '__main__':
                 print(f"\"{' '.join(user_input)}\" is an incorrect command.")
             except IndexError: # user presses Enter key
                 pass
-
+        
+    ## Print Functions ##
     def print_commands(*args):
         print(help_msg)
 
@@ -62,7 +64,7 @@ if __name__ == '__main__':
                 os.system('clear')
 
     def menu_slideshow(*args):
-        print_menu_tree(0.03)
+        print_menu_tree(delay=0.03)
         print_commands()
     
     def print_hall_menu(*args):
