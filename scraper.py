@@ -7,7 +7,7 @@ from classes import DiningHall, Mealtime, FoodStation, FoodItem
 URL = 'https://caldining.berkeley.edu/menus/'
 
 ## SETUP CODE ##
-EXAMPLE_HTML = True ## Manually set to True to use the example HTML page
+EXAMPLE_HTML = False ## Manually set to True to use the example HTML page
 
 if __name__ == '__main__' or EXAMPLE_HTML: 
     with open('example.html', 'r') as f:
